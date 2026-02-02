@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Valentine Question 💖</title>
+
+    <style>
+        body {
+            background-color: #ffe6f0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .letter {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0); }
+        }
+
+        h2 {
+            color: #ff4d88;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+        #yes {
+            background-color: #ff4d88;
+            color: white;
+            margin-right: 10px;
+        }
+
+        #no {
+            background-color: #ccc;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="letter">
+        <h2>💌 Will you be Arushi's Valentine? 💌</h2>
+
+        <div class="buttons">
+            <button id="yes" onclick="goYes()">Yes 💖</button>
+            <button id="no">No 😶</button>
+        </div>
+    </div>
+
+    <script>
+        const noButton = document.getElementById("no");
+
+        noButton.addEventListener("mouseover", () => {
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 50);
+
+            noButton.style.left = x + "px";
+            noButton.style.top = y + "px";
+        });
+
+        function goYes() {
+            window.location.href = "yes.html";
+        }
+    </script>
+
+</body>
+</html>
